@@ -145,6 +145,22 @@ section {
   border-radius: 16px;
 }
 
+#download-qr {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #38bdf8;
+  color: #020617;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+#download-qr:hover {
+  background-color: #0ea5e9;
+}
+
 
 
 
@@ -243,6 +259,7 @@ section {
   <h2>Scan My Portfolio</h2>
   <p>Scan the QR code to visit my website</p>
   <div id="qr-code"></div>
+  <button id="download-qr">Download QR Code</button>
   <img
     src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://jjlin16.github.io/portfolio/"
     alt="QR code for my portfolio"
@@ -360,6 +377,20 @@ const qrCode = new QRCodeStyling({
 });
 
 qrCode.append(document.getElementById("qr-code"));
+
+const downloadBtn = document.getElementById("download-qr");
+
+downloadBtn.addEventListener("click", () => {
+  qrCode.getRawData("png").then((blob) => {
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "JJLin16_Portfolio_QR.png"; // filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+});
+
 </script>
 
 </script>
