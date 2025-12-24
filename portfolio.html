@@ -134,6 +134,17 @@ section {
   padding: 10px;
 }
 
+#qr {
+  text-align: center;
+}
+
+#qr-code {
+  display: inline-block;
+  padding: 12px;
+  background: white;
+  border-radius: 16px;
+}
+
 
 
 
@@ -231,7 +242,7 @@ section {
 <section id="qr">
   <h2>Scan My Portfolio</h2>
   <p>Scan the QR code to visit my website</p>
-
+  <div id="qr-code"></div>
   <img
     src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://jjlin16.github.io/portfolio/"
     alt="QR code for my portfolio"
@@ -306,6 +317,50 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.15 });
 
 sections.forEach(section => observer.observe(section));
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+
+
+qrCode.append(document.getElementById("qr-code"));
+
+<script>
+const qrCode = new QRCodeStyling({
+  width: 220,
+  height: 220,
+  data: "https://jjlin16.github.io/portfolio/",
+  margin: 5,
+
+  dotsOptions: {
+    color: "#38bdf8",
+    type: "rounded"
+  },
+
+  backgroundOptions: {
+    color: "#ffffff"
+  },
+
+  cornersSquareOptions: {
+    color: "#0f172a",
+    type: "extra-rounded"
+  },
+
+  cornersDotOptions: {
+    color: "#38bdf8"
+  },
+
+  imageOptions: {
+    crossOrigin: "anonymous",
+    margin: 5
+  },
+
+  // Add your logo here
+  image: "images/logo.png"  // <-- path to your logo
+});
+
+qrCode.append(document.getElementById("qr-code"));
+</script>
 
 </script>
 
