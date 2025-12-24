@@ -123,6 +123,17 @@ section {
   scroll-margin-top: 70px;
 }
 
+#qr {
+  text-align: center;
+}
+
+#qr img {
+  margin-top: 15px;
+  border-radius: 12px;
+  background: white;
+  padding: 10px;
+}
+
 
 
 
@@ -215,11 +226,18 @@ section {
   <h2>Contact</h2>
   <p>Email: yourname@email.com</p>
   <p>GitHub: github.com/yourusername</p>
-  <img 
-  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://jjlin16.github.io/portfolio/" 
-  alt="Portfolio QR Code">
-
 </section>
+
+<section id="qr">
+  <h2>Scan My Portfolio</h2>
+  <p>Scan the QR code to visit my website</p>
+
+  <img
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://jjlin16.github.io/portfolio/"
+    alt="QR code for my portfolio"
+  >
+</section>
+
 
 <footer>
   © 2025 GitHub. All rights reserved.
