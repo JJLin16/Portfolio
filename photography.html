@@ -263,6 +263,11 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") showImage(currentIndex - 1);
 });
 
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    console.log("Clicked:", btn.textContent);
+  });
+});
 
 const filterBtns = document.querySelectorAll(".filter-btn");
 const photos = document.querySelectorAll(".gallery img");
