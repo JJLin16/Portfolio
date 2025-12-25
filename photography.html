@@ -144,6 +144,10 @@
   color: #020617;
 }
 
+.filter-btn {
+  pointer-events: auto;
+}
+
 
 
 </style>
@@ -274,7 +278,7 @@ filterBtns.forEach(btn => {
     photos.forEach(photo => {
       photo.style.display =
         filter === "all" || photo.dataset.category === filter
-          ? "block"
+          ? ""
           : "none";
     });
   });
