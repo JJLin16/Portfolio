@@ -22,8 +22,14 @@
 
   canvas {
   pointer-events: none;
-}
+  }
 
+  canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  }
 
   header, .gallery {
     position: relative;
@@ -164,7 +170,7 @@
 
 <header>
   <h1>Photography Collection</h1>
-  <a class="back" href="portfolio.html">← Back to Portfolio</a>
+  <a class="back" href="../">← Back to Portfolio</a>
 </header>
 <div class="filters">
   <button class="filter-btn active" data-filter="all">All</button>
